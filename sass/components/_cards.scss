@@ -2,16 +2,59 @@
 
 .card {
   display: grid;
-  gap: $card-flow-spacing;
-  padding: $card-padding;
+  // gap: $card-flow-spacing;
+  // padding: $card-padding;
   background-color: $card-background-default;
   font-family: $card-font-family;
   color: $card-color-default;
   line-height: $card-line-height;
   box-shadow: $card-shadow;
   border-radius: $card-border-radius;
+  overflow: hidden;
+
+  max-width: 600px;
+
+
+  @include mq(600px){
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  &__body{
+    padding: $card-body-padding;
+    display: grid;
+    gap: $card-body-gap;
+
+    @include mq(600px){
+      padding: $card-body-padding-large;
+    }
+  }
+
+  // &__header{
+  //   margin-bottom: $size-4;
+  //   * + *{
+  //     margin-top: $size-3;
+  //   }
+  // }
+
 
   &__heading {
     @include heading($card-heading-font-size, $card-heading-color-default);
   }
+
+  &__product-type{
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: $font-size-100;
+  }
+
+  // &__product-description{
+  //   margin-bottom: $size-6;
+  // }
+
+  // &__product-price{
+  //   margin-bottom: $size-5;
+  // }
+
+
 }

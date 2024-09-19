@@ -3,6 +3,8 @@
 .button {
   display: inline-flex;
   justify-content: center;
+  align-items: center;
+  gap: $size-3;
   cursor: pointer;
   text-decoration: none;
   line-height: 1;
